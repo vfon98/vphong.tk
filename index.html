@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Thông tin cá nhân</title>
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+	<style>
+	* {
+		box-sizing: border-box;
+		font-family: Arial, san-serif;
+		font-size: 20px;
+		scroll-behavior: smooth;
+	}
+	#container {
+		background-color: #f1f2f7;
+		margin: 0 auto;
+		border: 1px solid black;
+		width: 80%;
+	}
+	#navbar {
+		background-color: #555555;
+		position: sticky;
+		top: 0;
+		padding: 16px 0;
+	}
+	#navbar a {
+		color: white;
+		text-decoration: none;
+		padding: 16px;
+		font-weight: bold;
+	}
+	#navbar a:hover {
+		color: white;
+		background-color: black;
+		/*border-bottom: 1px solid red;*/
+	}
+	.title {
+		text-align: center;
+		background-color: white;
+		box-shadow: 0px 5px 2px grey;
+		border: 1px solid grey;
+		margin: 15px 0;
+	}
+	img.info-img {
+		width: 40%;
+		height: auto;
+		margin: 0 15px;
+	}
+	#info-table tr th {
+		text-align: right;
+	}
+	#contact-table, #contact-table td, #info-table td {
+		padding-left: 20px;
+	}
+	.menu-container {
+		position: relative;
+		display: inline-block;
+	}
+	.menu-item {
+		position: absolute;
+		top: 38px;
+		display: none;
+		box-shadow: 5px 5px 10px grey;
+	}
+	.menu-item a {
+		width: 180px;
+		display: block;
+		background-color: #006600;
+		border: 1px solid grey;
+		border-bottom: none;
+	}
+	.menu-container:hover .menu-item {
+		display: block;
+	}
+	.submenu-container {
+		position: relative;
+	}
+	.submenu-item {
+		position: absolute;
+		left: 100%;
+		top: 0;
+		display: none;
+	}
+	.submenu-container:hover .submenu-item{
+		display: block;
+		box-shadow: 5px 5px 10px grey;
+	}
+	.menu-container:hover > a {
+		background-color: black;
+	}
+	.submenu-container:hover > a {
+		background-color: black;
+	}
+</style>
+</head>
+<body style="background-color: lightgrey;">
+	<div id="container">
+		<h1 style="text-align: center; font-size: 50px;">Thông tin cá nhân</h1>
+		<div id="navbar">
+			<a href="#intro">Giới thiệu</a>
+			<a href="#info">Thông tin</a>
+			<a href="#contact">Liên hệ</a>
+			<div class="menu-container">
+				<a href="#work" style="color: red">Bài tập thực hành</a>
+				<div class="menu-item">
+					<div class="submenu-container">
+						<a href="#">Buổi 1<i class="fa fa-angle-right" style="float: right;"></i></a>
+						<div class="submenu-item">
+							<a target="_blank" href="Buoi1/Bai1/Bai1.html">Bài 1</a>
+							<a target="_blank" href="Buoi1/Bai2/Bai2.html">Bài 2</a>
+							<a href="index.html">Bài 3</a>
+						</div>
+					</div>
+					<div class="submenu-container">
+						<a href="Buoi2/Bai3/index.html" target="_blank">Buổi 2<i class="fa fa-angle-right" style="float: right;"></i></a>
+						<div class="submenu-item">
+							<a target="_blank" href="Buoi1/Bai1/Bai1.html">Bài 1</a>
+							<a target="_blank" href="Buoi2/Bai2/index.html">Bài 2</a>
+							<a target="_blank" href="Buoi2/Bai3/index.html">Bài 3</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="intro" class="title"><h2>Giới thiệu</h2></div>
+		<div>
+			<a href="https://www.ctu.edu.vn/" target="_blank"> 
+				<img src="img/ctu_img.jpg" alt="Đại học Cần Thơ" class="info-img" style="float: left;">
+			</a>
+			<h1>Trường Đại học Cần Thơ</h1>
+			<p>Trường Đại học Cần Thơ là một trong ba trường đại học đa ngành đứng đầu về đào tạo tại miền Nam Việt Nam. Được xếp vào nhóm trường đại học trọng điểm quốc gia Việt Nam, đồng thời là trung tâm nghiên cứu khoa học và kinh tế và chính sách quản lý lớn nhất miền Tây Việt Nam.</p>
+			<p>Trường là một trong ba trường đại học tại Việt Nam đạt chuẩn đào tạo quốc tế của Hệ thống Đại học ASEAN, theo sau trường Đại học Quốc tế của hệ thống Đại học Quốc gia.</p>
+			<a href="https://www.ctu.edu.vn/" target="_blank">
+				Chi tiết 
+				<i class="fa fa-angle-double-right"></i>
+			</a>
+			<div style="clear: both;"></div>
+		</div>
+
+		<br>
+		<div style="margin-left: 15px">
+			<a href="http://www.cit.ctu.edu.vn/" target="_blank">
+				<img src="img/khoa_cntt.jpg" alt="Khoa CNTT" class="info-img" style="float: right;">
+			</a>
+			<h1>Khoa Công nghệ Thông tin và Truyền thông</h1>
+			<p>Khoa Công nghệ Thông tin và Truyền thông (CNTT&TT) - Trường Đại học Cần Thơ được thành lập năm 1994 trên cơ sở Trung tâm Điện tử và Tin học.</p>
+			<p>Khoa là đơn vị đào tạo và nghiên cứu khoa học về CNTT&TT mạnh của cả nước, có vai trò nòng cốt trong đào tạo, nghiên cứu và chuyển giao công nghệ cho vùng Đồng bằng sông Cửu Long (ĐBSCL) và khu vực phía nam.</p>
+			<p>Sứ mệnh của khoa là đào tạo đại học, sau đại học, nghiên cứu khoa học và chuyển giao công nghệ trong lĩnh vực CNTT&TT.</p>
+			<a href="http://www.cit.ctu.edu.vn/" target="_blank">
+				Chi tiết 
+				<i class="fa fa-angle-double-right"></i>
+			</a>
+			<div style="clear: both;"></div>
+		</div>
+
+		<div id="info" class="title"><h2>Thông tin</h2></div>
+		<img src="img/coder.png" alt="Coder" style="float: left; width: 150px; height: 150px; margin: 0 20px;">
+		<table id="info-table">
+			<tr>
+				<th>Họ tên: </th>
+				<td>Tô Vủ Phong</td>
+			</tr>
+			<tr>
+				<th>MSSV: </th>
+				<td>B1605410</td>
+			</tr>
+			<tr>
+				<th>Nhóm: </th>
+				<td>Sáng thứ 2</td>
+			</tr>
+			<tr>
+				<th>Khoa: </th>
+				<td>CNTT & TT</td>
+			</tr>
+			<tr>
+				<th>Chuyên ngành: </th>
+				<td>Kỹ thuật phần mềm</td>
+			</tr>
+			<tr>
+				<th>Lớp: </th>
+				<td>DI1696A2</td>
+			</tr>
+		</table>
+		<div style="clear: both;"></div>
+
+		<div id="work" class="title"><h2>Bài tập thực hành</h2></div>
+		<div style="padding: 0 20px;">
+			<h3>Buổi 1 - HTML</h3>
+			<ul>
+				<li>
+					<a href="Buoi1/Bai1/Bai1.html" target="_blank">Bài 1 - Lịch làm việc</a>
+				</li>
+				<li>
+					<a href="Buoi1/Bai2/Bai2.html" target="_blank">Bài 2 - Form đăng kí</a>
+				</li>
+			</ul>
+			<hr>
+
+			<h3>Buổi 2 - CSS</h3>
+			<ul>
+				<li>
+					<a href="Buoi1/Bai1/Bai1.html" target="_blank">Bài 1</a>
+				</li>
+				<li>
+					<a href="Buoi2/Bai2/index.html" target="_blank">Bài 2</a>
+				</li>
+				<li>
+					<a href="Buoi2/Bai3/index.html" target="_blank">Bài 3</a>
+				</li>
+			</ul>
+		</div>	
+
+		<div id="contact" class="title"><h2>Liên hệ</h2></div>
+		<table id="contact-table">
+			<tr>
+				<th><i class="fas fa-map-marker-alt" style="font-size: 30px;"></i></th>
+				<td>Ninh Kiều - Cần Thơ</td>
+			</tr>
+			<tr>
+				<th><i class="far fa-envelope" style="font-size: 30px"></i></th>
+				<td>phongb1605410@student.ctu.edu.vn</td>
+			</tr>
+			<tr>
+				<th><i class="fas fa-phone" style="font-size: 30px"></i></th>
+				<td>01273881xxx</td>
+			</tr>
+			<tr>
+				<th><i class="fab fa-facebook-square" style="font-size: 30px"></i></th>
+				<td><a href="https://www.facebook.com/">Facebook.com</a></td>
+			</tr>
+		</table>		
+	</div>
+</body>
+</html>

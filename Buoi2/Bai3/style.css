@@ -1,0 +1,80 @@
+body {
+	background-color: grey;
+}
+#wrap {
+	padding: 8px;
+	width: 800px;
+	margin: 0 auto;
+	background-color: seagreen;
+	background-image: url(banner.jpg);
+	background-position: 8px 8px;
+	background-repeat: no-repeat;
+
+}
+#title {
+	height: 109px;
+	color: yellow;
+	text-align: center;
+	font-size: 30px;
+	font-family: arial, sans-serif;
+}
+#menu {
+	position: relative;
+}
+#menu ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+#menu ul li {
+	box-sizing: border-box;
+	float: left;
+	width: 25%;
+}
+#menu ul li a {
+	border: 1px dotted yellow;
+	text-decoration: none;
+	color: yellow;
+	background-color: black;
+	text-align: center;
+	display: block;
+	padding: 5px;
+}
+#menu ul li a:hover {
+	color: black;
+	background-color: lightgrey;
+}
+
+#menu ul li ul li {
+	width: 160px;
+	display: block;
+}
+#menu ul li ul {
+	position: absolute;
+	width: 25%;
+	display: none;
+}
+#menu ul li:hover ul {
+	display: block;
+}
+
+#content {
+	clear: both;
+	padding: 10px;
+	font-size: 18px;
+}
+#content h4 {
+	color: yellow;
+	font-size: 20px;
+	display: inline-block;
+	border-bottom: 2px dotted yellow;
+	margin: 0;
+}
+#content a {
+	color: white;
+}
+#footer {
+	padding: 16px;
+	text-align: center;
+	border-top: 2px dotted black;
+}
