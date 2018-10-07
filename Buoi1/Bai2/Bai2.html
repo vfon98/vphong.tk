@@ -1,84 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Thực hành bài 2</title>
-	<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
-	<style>
-		.container {
-			border: 1px solid black;
-			margin: 0 auto;
-			width: 450px;
-			padding: 10px;
-		}
-		table {
-			width: 450px;
-			/*border: 1px solid black;*/
-			padding: 15px;
-			background-color: #d3d3d3;
-		}
-	</style>
-</head>
-<body>
-	<div class="container">
-			<h1 style="color: red; text-align: center;">Đăng kí tài khoản mới</h1>
-			<p style="text-align: center;">Vui lòng điền đầy đủ thông tin bên dưới để đăng kí tài khoản mới</p>
-		<form method="post" action="/vphong/Buoi3/signup.php" enctype="multipart/form-data">
-			<table>
-				<tr>
-					<td><p>Tên đăng nhập</p></td>
-					<td><input type="text" name="usr" required="required"></td>
-				</tr>
-				<tr>
-					<td><p>Mật khẩu</p></td>
-					<td><input type="password" name="pass" required="required"></td>
-				</tr>
-				<tr>
-					<td><p>Gõ lại mật khẩu</p></td>
-					<td><input type="password" name="re-pass" required="required"></td>
-				</tr>
-				<tr>
-					<td><p>Hình đại diện</p></td>
-					<td><input type="file" name="usr-avatar"></td>
-				</tr>
-				<tr>
-					<td><p>Giới tính</p></td>
-					<td> 
-						<input type="radio" name="gender">Nam
-						<input type="radio" name="gender">Nữ
-						<input type="radio" name="gender">Khác
-					</td> 
-				</tr>
-				<tr>
-					<td><p>Nghề nghiệp</p></td>
-					<td>
-						<select name="job">
-							<option value="Học sinh">Học sinh</option>
-							<option value="Sinh viên">Sinh viên</option>
-							<option value="Giáo viên">Giáo viên</option>
-							<option value="Khác">Khác</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><p>Sở thích</p></td>
-					<td>
-						<input type="checkbox" name="hobbies[]" value="Thể thao">Thể thao
-						<input type="checkbox" name="hobbies[]" value="Du lịch">Du lịch  <br> 
-						<input type="checkbox" name="hobbies[]" value="Âm nhạc">Âm nhạc
-						<input type="checkbox" name="hobbies[]" value="Thời trang">Thời trang
-					</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>
-						<input type="submit" value="Đăng ký" name="submit_click">
-						<input type="reset" value="Làm lại">
-					</td>
-				</tr>
-			</table>
-		</form>
-	</div>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Thực hành bài 2</title>
+	<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+	<style>
+		.container {
+			border: 1px solid black;
+			margin: 0 auto;
+			width: 450px;
+			padding: 10px;
+		}
+		table {
+			width: 450px;
+			/*border: 1px solid black;*/
+			padding: 15px;
+			background-color: #d3d3d3;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+			<h1 style="color: red; text-align: center;">Đăng kí tài khoản mới</h1>
+			<p style="text-align: center;">Vui lòng điền đầy đủ thông tin bên dưới để đăng kí tài khoản mới</p>
+		<form>
+			<table>
+				<tr>
+					<td><p>Tên đăng nhập</p></td>
+					<td><input type="text"></td>
+				</tr>
+				<tr>
+					<td><p>Mật khẩu</p></td>
+					<td><input type="password"></td>
+				</tr>
+				<tr>
+					<td><p>Gõ lại mật khẩu</p></td>
+					<td><input type="password"></td>
+				</tr>
+				<tr>
+					<td><p>Hình đại diện</p></td>
+					<td><input type="file"></td>
+				</tr>
+				<tr>
+					<td><p>Giới tính</p></td>
+					<td> 
+						<input type="radio" name="gender">Nam
+						<input type="radio" name="gender">Nữ
+						<input type="radio" name="gender">Khác
+					</td> 
+				</tr>
+				<tr>
+					<td><p>Nghề nghiệp</p></td>
+					<td>
+						<select name="job">
+							<option>Học sinh</option>
+							<option>Sinh viên</option>
+							<option>Giáo viên</option>
+							<option>Khác</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><p>Sở thích</p></td>
+					<td>
+						<input type="checkbox">Thể thao
+						<input type="checkbox">Du lịch  <br> 
+						<input type="checkbox">Âm nhạc
+						<input type="checkbox">Thời trang
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="submit" value="Đăng ký">
+						<input type="reset" value="Làm lại">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
 </html>
