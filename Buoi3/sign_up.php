@@ -1,5 +1,4 @@
 <?php
-session_start();
 header('Content-Type: text/html; charset=utf-8');
 if (isset($_POST['submit_click'])) {
 	$usr = $_POST['usr'];
@@ -21,7 +20,6 @@ if (isset($_POST['submit_click'])) {
 			}
 		}
 	}
-	echo $hobbies;
 
 	if (isset($_FILES['usr_avatar']) && $_FILES['usr_avatar']['error'] === 0) {
 		$is_img = getimagesize($_FILES['usr_avatar']['tmp_name']);
@@ -31,12 +29,15 @@ if (isset($_POST['submit_click'])) {
 				move_uploaded_file($_FILES['usr_avatar']['tmp_name'], $file_location);
 			}
 		}
-		else {
-			echo '<h1 style="color:red; text-align:center;">File bạn upload không phải hình ảnh</h1>';
-		}
 	}
 
 	require 'sql_connection.php';
+	$sql = "SELECT * FROM thanhvien WHERE tendangnhap = '$usr'";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		$signup_ok = false;
+		header("location: /Buoi1/Bai2/Bai2.php?error=true");
+	}
 	if ($signup_ok) {
 		$sql = "INSERT INTO thanhvien VALUES
 		(null, '$usr', '$pass', '$file_location', '$gender', '$job', '$hobbies')";
@@ -48,8 +49,7 @@ if (isset($_POST['submit_click'])) {
 			echo '<br>That bại';
 		}
 		$conn->close();
-		$_SESSION['usr'] = $usr;
-		header("location:information.php");
+		header("location:sign_in.php");
 	}
 }
 ?>

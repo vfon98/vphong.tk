@@ -16,7 +16,7 @@
 	}
 	else {
 		echo "<h1>Bạn chưa đăng nhập</h1>";
-		header("location:/");
+		header("location: sign_in.php");
 	}
 
 	$conn->close();
@@ -28,25 +28,41 @@
 	<meta charset="UTF-8">
 	<title>Thông tin cá nhân</title>
 	<style>
+		body {
+			background-color: #1396C2;
+		}
 		#container {
-			float: left;
-			padding: 10px;
-			border: 1px solid red;
-			/*margin: 0 auto;*/
+			position: relative;
+			width: 60%;
+			margin: 0 auto;
+			box-shadow: 4px 4px 10px grey;
 		}
 		table {
-			background-color: lightgrey;
-			margin: 0 auto;
+			border: 1px solid red;
+			width: 100%;
+			background-color: #013082;
+			color: white;
+		}
+		table tr th {
+			width: 350px;
 		}
 		table tr td {
-			/*width: 200px;*/
+			font-size: 1.2em;
+			padding-left: 15px;
+			padding-right: 50px;
 		}
 		img#usr-avatar {
-			width: 300px;
+			margin: 15px;
+			width: 350px;
 			height: auto;
+			border: 2px solid white;
+			border-radius: 8px;
 		}
 		#title {
-			color: red;
+			padding: 20px;
+			border-bottom: 1px dashed red;
+			font-weight: bold;
+			color: orange;
 			text-align: center;
 			font-size: 30px;
 		}
@@ -58,10 +74,10 @@
 </head>
 <body>
 	<div id="container">
-		<table border="1">
-			<tr><td id="title" colspan="2">Chào bạn <?php echo $usr; ?></td></tr>
+		<table>
+			<tr><td id="title" colspan="2">Chào bạn <?php echo $usr; ?>!</td></tr>
 			<tr>
-				<th rowspan="6">
+				<th rowspan="5">
 					<?php 
 						echo '<img id="usr-avatar" src="' . $usr_avatar . '" alt="Ảnh bạn upload bị lỗi"/>';
 					 ?>
@@ -79,7 +95,7 @@
 			</tr>
 			<tr>
 				<td>
-					<form action="logout.php"><input type="submit" value="Đăng xuất" id="logout"></form>
+					<form action="sign_out.php" method="POST"><input type="submit" value="Đăng xuất" id="logout"></form>
 				</td>
 			</tr>
 		</table>
