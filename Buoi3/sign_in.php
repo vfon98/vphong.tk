@@ -1,6 +1,9 @@
 <?php 
 session_start();
 header("Content-Type: text/html; charset=utf-8");
+if (isset($_SESSION['usr'])) {
+	header("location: information.php");
+}
 function validate($data)
 {
 	$data = trim($data);
@@ -14,6 +17,7 @@ function validate($data)
 <head>
 	<meta charset="UTF-8">
 	<title>Đăng nhập</title>
+	<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 	<style>
 	body {
 		background-color: #1396C2;
@@ -24,12 +28,34 @@ function validate($data)
 		left: 50%;
 		transform: translate(-50%, -60%);
 		box-sizing: border-box;
-		width: 35%;
+		width: 500px;
 		background-color: #013082;
 		padding: 40px;
 		margin: 0 auto;
 		border-radius: 10px;
 		box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.2);
+		-webkit-animation-name: slideIn;
+		-o-animation-name: slideIn;
+		animation-name: slideIn;
+		-webkit-animation-duration: 1.5s;
+		-o-animation-duration: 1.5s;
+		animation-duration: 1.5s;
+	}
+	@-webkit-keyframes slideIn {
+		from { top: 100% }
+		to { top: 50% }
+	}
+	@-o-keyframes slideIn {
+		from { top: 100% }
+		to { top: 50% }
+	}
+	@-moz-keyframes slideIn {
+		from { top: 100% }
+		to { top: 50% }
+	}
+	@keyframes slideIn {
+		from { top: 100% }
+		to { top: 50% }
 	}
 	input {
 		width: 80%;
@@ -44,7 +70,7 @@ function validate($data)
 	input[type="submit"] {
 		margin-top: 20px;
 		width: 90%;
-		background-color: #19B8CD;
+		background-color: #5CB85C;
 		color: white;
 		font-size: 1.4em;
 		font-weight: bold;
@@ -81,13 +107,16 @@ function validate($data)
 				require 'sql_connection.php';
 				$sql = "SELECT * FROM thanhvien WHERE tendangnhap = '$usr' AND matkhau = '$pass'";
 				$result = $conn->query($sql);
+				$row = $result->fetch_assoc();
 				if ($result->num_rows > 0) {
 					$_SESSION['usr'] = $usr;
+					$_SESSION['id_thanhvien'] = $row['id'];
 					header("location: information.php");
 				}
 				else {
 					echo "<p id='alert'>Sai tài khoản hoặc mật khẩu !</p>";
 				}
+				$conn->close();
 			}
 			?>
 			<input type="submit" value="Đăng nhập">

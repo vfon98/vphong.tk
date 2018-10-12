@@ -5,12 +5,16 @@
 	<title>Trang chủ</title>
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<style>
 	* {
 		box-sizing: border-box;
 		font-family: Arial, san-serif;
-		font-size: 20px;
 		scroll-behavior: smooth;
+		font-size: 20px;
+	}
+	body {
+		background-color: lightgrey;
 	}
 	ul li {
 		margin: 5px;
@@ -95,11 +99,26 @@
 	.submenu-container:hover > a {
 		background-color: black;
 	}
+	.footer {
+		text-align: center;
+	}
+	#homework-list a{
+		text-decoration: none;
+	}
+	#homework-list a:hover {
+		color: red;
+	}
+	#homework-list ul li {
+		padding: 5px;
+	}
+	.footer p {
+		font-size: 10px !important;
+	}
 </style>
 </head>
-<body style="background-color: lightgrey;">
+<body>
 	<div id="container">
-		<h1 style="text-align: center; font-size: 50px;">Thông tin cá nhân</h1>
+		<h1 style="text-align: center; font-size: 50px; font-family: 'Pacifico', cursive;">Welcome to my website</h1>
 		<div id="navbar">
 			<a href="#intro">Giới thiệu</a>
 			<a href="#info">Thông tin</a>
@@ -126,13 +145,13 @@
 					</div>
 
 					<div class="submenu-container">
-						<a href="Buoi3/signup.php">Buổi 3
+						<a href="#!">Buổi 3
 						<i class="fa fa-angle-right" style="float: right;"></i></a>
 						<div class="submenu-item">
-							<a target="_blank" href="Buoi1/Bai2/Bai2.php">Bài 1</a>
-							<a target="_blank" href="Buoi3/sign_in.php">Bài 2</a>
-							<a target="_blank" href="#">Bài 3</a>
-							<a target="_blank" href="#">Bài 4</a>
+							<a target="_blank" href="Buoi1/Bai2/Bai2.php">Đăng kí</a>
+							<a target="_blank" href="Buoi3/sign_in.php">Đăng nhập</a>
+							<a target="_blank" href="Buoi3/add_product.php">Bài 3</a>
+							<a target="_blank" href="Buoi3/product_list.php">Bài 4</a>
 						</div>
 					</div>
 				</div>
@@ -202,7 +221,7 @@
 		<div style="clear: both;"></div>
 
 		<div id="work" class="title"><h2>Bài tập thực hành</h2></div>
-		<div style="padding: 0 20px;">
+		<div style="padding: 0 20px;" id="homework-list">
 			<h3>Buổi 1 - HTML</h3>
 			<ul>
 				<li>
@@ -211,20 +230,30 @@
 				<li>
 					<a href="Buoi1/Bai2/Bai2.html" target="_blank">Bài 2 - Form đăng kí</a>
 				</li>
+				<li><a href="#">Bài 3 - Trang chủ</a></li>
 			</ul>
 			<hr>
 
 			<h3>Buổi 2 - CSS</h3>
 			<ul>
 				<li>
-					<a href="Buoi1/Bai1/Bai1.html" target="_blank">Bài 1</a>
+					<a href="Buoi1/Bai1/Bai1.html" target="_blank">Bài 1 - Định dạng bảng</a>
 				</li>
 				<li>
-					<a href="Buoi2/Bai2/index.html" target="_blank">Bài 2</a>
+					<a href="Buoi2/Bai2/index.html" target="_blank">Bài 2 - Định dạng trang web</a>
 				</li>
 				<li>
-					<a href="Buoi2/Bai3/index.html" target="_blank">Bài 3</a>
+					<a href="Buoi2/Bai3/index.html" target="_blank">Bài 3 - Định dạng menu</a>
 				</li>
+			</ul>
+			<hr>
+
+			<h3>Buổi 3 - PHP & MySQL</h3>
+			<ul>
+				<li><a href="Buoi1/Bai2/Bai2.php" target="_blank">Bài 1 - Đăng kí</a></li>
+				<li><a href="Buoi3/sign_in.php" target="_blank">Bài 2 - Đăng nhập</a></li>
+				<li><a href="Buoi3/add_product.php" target="_blank">Bài 3 - Thêm sản phẩm</a></li>
+				<li><a href="Buoi3/product_list.php" target="_blank">Bài 4 - Danh sách sản phẩm</a></li>
 			</ul>
 		</div>	
 
@@ -236,7 +265,7 @@
 			</tr>
 			<tr>
 				<th><i class="far fa-envelope" style="font-size: 30px"></i></th>
-				<td>phongb1605410@student.ctu.edu.vn</td>
+				<td>Phongb1605410@student.ctu.edu.vn</td>
 			</tr>
 			<tr>
 				<th><i class="fas fa-phone" style="font-size: 30px"></i></th>
@@ -246,7 +275,13 @@
 				<th><i class="fab fa-facebook-square" style="font-size: 30px"></i></th>
 				<td><a href="https://www.facebook.com/">Facebook.com</a></td>
 			</tr>
-		</table>		
+		</table>
+		<hr style="margin: 0 20px;">
+		<div class="footer">
+			<p>vphong.000webhostapp.com - published in 2018</p>
+			<p>author: Tô Vủ Phong - B1605410</p>
+			<p>Powered by <a href="https://www.000webhost.com/" target="_blank" style="font-size: inherit;">000webhost.com</a></p>
+		</div>
 	</div>
 </body>
 </html>

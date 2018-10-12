@@ -45,7 +45,7 @@
 					<td><p>Gõ lại mật khẩu</p></td>
 					<td>
 						<input type="password" name="re_pass" required="required" id="repass">
-						<span id="tick" style="color: green; font-size: 20px;"></span>
+						<span id="tick" style="color: green; font-size: 25px;"></span>
 					</td>
 				</tr>
 				<tr>
@@ -83,7 +83,7 @@
 				<tr>
 					<td></td>
 					<td>
-						<input type="submit" value="Đăng ký" name="submit_click" disabled="disabled">
+						<input type="submit" value="Đăng ký" name="submit_click" id="submit-btn">
 						<input type="reset" value="Làm lại">
 					</td>
 				</tr>
@@ -92,20 +92,24 @@
 	</div>
 
 	<script>
-		var pass = document.getElementById("pass");
-		var repass = document.getElementById("repass");
-		var tick = document.getElementById("tick");
-		var submit = document.querySelector('input[type="submit"]');
-		repass.oninput = function () {
-			if (pass.value === repass.value && pass.value !== "") {
-				pass.style.backgroundColor = "lightgreen";
-				repass.style.backgroundColor = "lightgreen";
-				tick.innerHTML = "&#10004;";
-				submit.disabled = false;
-			}
-			else {
-				repass.style.backgroundColor = "#ff6666";
-				tick.innerHTML = "";
+		window.onload = function(){
+			var pass = document.getElementById("pass");
+			var repass = document.getElementById("repass");
+			var tick = document.getElementById("tick");
+			var submitBtn = document.getElementById("submit-btn");
+			submitBtn.disabled = true;
+			repass.oninput = function () {
+				if ((pass.value == repass.value) && (pass.value != "")) {
+					pass.style.backgroundColor = "lightgreen";
+					repass.style.backgroundColor = "lightgreen";
+					tick.innerHTML = "&#10004;";
+					submitBtn.disabled = false;
+				}
+				else {
+					repass.style.backgroundColor = "#ff6666";
+					tick.innerHTML = "";
+					submitBtn.disabled = true;
+				}
 			}
 		}
 	</script>

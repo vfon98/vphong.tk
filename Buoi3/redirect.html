@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chuyển trang</title>
+</head>
+<body>
+	<h1 style="color: red;">Bạn cần phải đăng nhập trước để thực hiện thao tác</h1>
+	<h3>Chuyển trang trong <span id="counter"></span> giây ...</h3>
+	<script>
+		var count = 3;
+		var counter = document.getElementById("counter");
+		setInterval(() => {
+			counter.innerHTML = count--;
+		}, 1000);
+		setTimeout(() => {
+			window.location.assign("sign_in.php");
+		}, 3000);
+	</script>
+</body>
+</html>

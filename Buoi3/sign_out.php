@@ -7,6 +7,7 @@ session_destroy();
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 	<title>Đăng xuất</title>
 </head>
 <body>
