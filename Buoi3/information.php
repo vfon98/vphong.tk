@@ -52,6 +52,7 @@ $conn->close();
 </head>
 <body>
 	<div class="container">
+	    <a href="/index.html" style="color: lightgrey; font-weight: bold;">&#8617; Trang chủ</a>
 		<table class="info">
 			<tr>
 				<td colspan="2" class="title"><h1>Chào bạn <?php echo $usr; ?> !</h1></td>

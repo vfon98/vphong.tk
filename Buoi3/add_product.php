@@ -34,6 +34,8 @@
 </head>
 <body>
 	<div class="container">
+		<a href="information.php" style="font-weight: bold;">&#8617; Trở lại</a>
+
 		<h1>Thêm sản phẩm mới</h1>
 		<p>Vui lòng điền đầy đủ thông tin bên dưới để thêm sản phẩm mới</p>
 		<div class="form">

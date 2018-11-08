@@ -1,0 +1,37 @@
+body {
+	background-color: lightgrey;
+	text-align: center;
+}
+h1 {
+	color: black;
+	text-align: center;
+}
+#wrap {
+	border-radius: 6px;
+	padding: 15px;
+	background-color: white;
+	width: 750px;
+	margin: auto;
+}
+#requirement {
+	text-align: initial;
+}
+#laptopImg {
+	border-radius: 6px;
+	box-shadow: 0px 0px 5px 5px lightgrey;
+}
+button {
+	width: 125px;
+	margin-top: 5px;
+	font-size: 20px;
+}
+select {
+	font-size: 18px;
+	margin: 10px 0;
+}
+#add-link {
+	font-size: 25px;
+}
+#add-link:hover {
+	color: green;
+}

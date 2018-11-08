@@ -15,7 +15,21 @@
 	table {
 		width: 450px;
 		padding: 15px;
+		padding-right: 0;
 		background-color: #d3d3d3;
+	}
+	table td {
+		width: 400px;
+	}
+	table th {
+		text-align: left;
+	}
+	#user-warning, #pass-warning, #repass-warning {
+		padding-top: 5px;
+		color: red;
+		font-style: italic;
+		font-weight: bold;
+		font-size: 14px;
 	}
 </style>
 </head>
@@ -23,45 +37,51 @@
 	<div class="container">
 		<h1 style="color: red; text-align: center;">Đăng kí tài khoản mới</h1>
 		<p style="text-align: center;">Vui lòng điền đầy đủ thông tin bên dưới để đăng kí tài khoản mới</p>
-		<form method="post" action="/Buoi3/sign_up.php" enctype="multipart/form-data">
+		<form method="post" action="/Buoi3/sign_up.php" enctype="multipart/form-data" onsubmit="return isValidForm()">
 			<table>
 				<tr>
-					<td><p>Tên đăng nhập</p></td>
-					<td><input type="text" name="usr" required="required" autofocus="autofocus"><br>
+					<th><p>Tên đăng nhập</p></th>
+					<td>
+						<input type="text" name="usr" id="user" autofocus="autofocus" onchange="checkUser()">
 						<?php 
 						if (isset($_GET['error'])) {
 							if ($_GET['error'] === "true") {
-								echo '<i style="color: red;">Tài khoản đã tồn tại !</i>';
+								echo '<br><i style="color: red;">Tài khoản đã tồn tại !</i>';
 							}
 						}
 						?>
+						<div id="user-warning"></div>
 					</td>
 				</tr>
 				<tr>
-					<td><p>Mật khẩu</p></td>
-					<td><input type="password" name="pass" required="required" id="pass"></td>
-				</tr>
-				<tr>
-					<td><p>Gõ lại mật khẩu</p></td>
+					<th><p>Mật khẩu</p></th>
 					<td>
-						<input type="password" name="re_pass" required="required" id="repass">
-						<span id="tick" style="color: green; font-size: 25px;"></span>
+						<input type="password" name="pass" id="pass" onchange="checkPass()">
+						<div id="pass-warning"></div>
 					</td>
 				</tr>
 				<tr>
-					<td><p>Hình đại diện</p></td>
-					<td><input type="file" name="usr_avatar"></td>
+					<th><p>Gõ lại mật khẩu</p></th>
+					<td>
+						<input type="password" name="re_pass" id="repass">
+						<span id="tick" style="color: green; font-size: 25px;"></span>
+						<div id="repass-warning"></div>
+					</td>
 				</tr>
 				<tr>
-					<td><p>Giới tính</p></td>
+					<th><p>Hình đại diện</p></th>
+					<td><input type="file" name="usr_avatar" required></td>
+				</tr>
+				<tr>
+					<th><p>Giới tính</p></th>
 					<td> 
-						<input type="radio" name="gender" value="Nam">Nam
-						<input type="radio" name="gender" value="Nữ">Nữ
-						<input type="radio" name="gender" value="Khác" checked="checked">Khác
+						<input type="radio" name="gender" id="male" value="Nam"><label for="male">Nam</label>
+						<input type="radio" name="gender" id="female" value="Nữ"><label for="female">Nữ</label>
+						<input type="radio" name="gender" id="other" value="Khác" checked="checked"><label for="other">Khác</label>
 					</td> 
 				</tr>
 				<tr>
-					<td><p>Nghề nghiệp</p></td>
+					<th><p>Nghề nghiệp</p></th>
 					<td>
 						<select name="job">
 							<option value="Học sinh">Học sinh</option>
@@ -72,12 +92,12 @@
 					</td>
 				</tr>
 				<tr>
-					<td><p>Sở thích</p></td>
+					<th><p>Sở thích</p></th>
 					<td>
-						<input type="checkbox" name="hobbies[]" value="Thể thao">Thể thao
-						<input type="checkbox" name="hobbies[]" value="Du lịch">Du lịch <br> 
-						<input type="checkbox" name="hobbies[]" value="Âm nhạc">Âm nhạc
-						<input type="checkbox" name="hobbies[]" value="Thời trang">Thời trang
+						<input type="checkbox" name="hobbies[]" id="hob1" value="Thể thao"><label for="hob1">Thể thao</label>
+						<input type="checkbox" name="hobbies[]" id="hob2" value="Du lịch"><label for="hob2">Du lịch</label> <br> 
+						<input type="checkbox" name="hobbies[]" id="hob3" value="Âm nhạc"><label for="hob3">Âm nhạc</label>
+						<input type="checkbox" name="hobbies[]" id="hob4" value="Thời trang"><label for="hob4">Thời trang</label>
 					</td>
 				</tr>
 				<tr>
@@ -90,28 +110,6 @@
 			</table>
 		</form>
 	</div>
-
-	<script>
-		window.onload = function(){
-			var pass = document.getElementById("pass");
-			var repass = document.getElementById("repass");
-			var tick = document.getElementById("tick");
-			var submitBtn = document.getElementById("submit-btn");
-			submitBtn.disabled = true;
-			repass.oninput = function () {
-				if ((pass.value == repass.value) && (pass.value != "")) {
-					pass.style.backgroundColor = "lightgreen";
-					repass.style.backgroundColor = "lightgreen";
-					tick.innerHTML = "&#10004;";
-					submitBtn.disabled = false;
-				}
-				else {
-					repass.style.backgroundColor = "#ff6666";
-					tick.innerHTML = "";
-					submitBtn.disabled = true;
-				}
-			}
-		}
-	</script>
+	<script src="validation.js"></script>
 </body>
 </html>

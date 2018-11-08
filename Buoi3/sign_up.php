@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (isset($_SESSION['usr'])) {
+	unset($_SESSION['usr']);
+	session_destroy();
+}
 header('Content-Type: text/html; charset=utf-8');
 if (isset($_POST['submit_click'])) {
 	$usr = $_POST['usr'];

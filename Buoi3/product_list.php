@@ -11,6 +11,7 @@ session_start();
 </head>
 <body>
 	<div class="container">
+	    <a href="information.php" style="color: lightgrey; font-weight: bold;">&#8617; Trở lại</a>
 		<div id="wrap">
 			<?php 
 			if (isset($_SESSION['usr']) && isset($_SESSION['id_thanhvien'])) {
@@ -29,9 +30,10 @@ session_start();
 				echo '<th>Giá sản phẩm</th>';
 				echo '<th colspan="3">Lựa chọn</th>';
 				echo '</tr>';
+				$stt = 1;
 				while ($row = $result->fetch_assoc()) {
 					echo '<tr>';
-					echo '<td class="center-content">' . $row['idsp'] . '</td>';
+					echo '<td class="center-content">' . $stt++ . '</td>';
 					echo '<td>' . $row['tensp'] . '</td>';
 					echo '<td>' . $row['giasp'] . ' (VND)</td>';
 					echo '<td><a href="detail_product.php?q=' . $row['idsp'] . '">Xem chi tiết</a></td>';

@@ -20,6 +20,7 @@ else {
 <head>
 	<meta charset="UTF-8">
 	<title>Chỉnh sửa sản phẩm</title>
+	<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 	<style>
 	.container {
 		width: 500px;
@@ -44,7 +45,8 @@ else {
 		text-align: left;
 	}
 	img {
-		width: 50px;
+		width: 60px;
+		vertical-align: middle;
 	}
 </style>
 </head>
@@ -57,23 +59,23 @@ else {
 			<form action="update_product.php?q=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
 				<table width="100%">
 					<tr>
-						<td colspan="2" style="text-align: center;">
+						<td colspan="2" style="text-align: center; padding: 0;">
 							<img src="<?php echo $row['hinhanhsp'] ?>" alt="chưa có ảnh đại diện">
 						</td>
 					</tr>
 					<tr>
 						<th>Tên sản phẩm</th>
-						<td><input type="text" name="name" autofocus="autofocus"></td>
+						<td><input type="text" name="name" id="name" autofocus="autofocus" required="required"></td>
 					</tr>
 					<tr>
 						<th>Chi tiết sản phẩm</th>
 						<td>
-							<textarea name="detail" cols="30" rows="6"></textarea>
+							<textarea name="detail" id="detail" cols="30" rows="6"></textarea>
 						</td>
 					</tr>
 					<tr>
 						<th>Giá sản phẩm</th>
-						<td><input type="number" name="price" min="0" required="required" max="1000000000" step="5000">(VND)</td>
+						<td><input type="number" name="price" id="price" min="0" max="1000000000" step="5000" required="required">(VND)</td>
 					</tr>
 					<tr>
 						<th>Hình đại diện</th>
@@ -83,14 +85,19 @@ else {
 						<th></th>
 						<td>
 							<input type="submit" value="Lưu thay đổi">
-							<form action="product_list.php" method="POST">
-								<input type="submit" value="Hủy bỏ">
-							</form>
+							<input type="button" value="Hủy bỏ" onclick="location.href='product_list.php'">
 						</td>
 					</tr>
 				</table>
 			</form>
 		</div>
 	</div>
+	<script>
+		window.onload = function() {
+			document.getElementById("name").value = "<?php echo $tensp; ?>";
+			document.getElementById("detail").value = "<?php echo $row['chitietsp']; ?>";
+			document.getElementById("price").value = "<?php echo $row['giasp']; ?>";
+		}
+	</script>
 </body>
 </html>
